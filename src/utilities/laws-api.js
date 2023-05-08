@@ -9,3 +9,7 @@ export function createLaw(lawData) {
 export function getAllLaws() {
     return sendRequest(`${BASE_URL}/getAllLaws`)
 }
+
+export function deleteLaw(law) {
+    return sendRequest(`${BASE_URL}/deleteLaw`, 'DELETE')
+}

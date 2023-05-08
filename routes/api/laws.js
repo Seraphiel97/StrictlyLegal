@@ -7,4 +7,6 @@ router.get('/getAllLaws', lawsCtrl.getAllLaws)
 
 router.post('/create', ensureLoggedIn, lawsCtrl.createLaw)
 
+router.delete('/deleteLaw', ensureLoggedIn, lawsCtrl.deleteLaw)
+
 module.exports = router
