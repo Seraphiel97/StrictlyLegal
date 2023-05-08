@@ -15,16 +15,9 @@ export default function Nav({user, updateUser}) {
       <div className="">
         <Link to="/">Home</Link>
         &nbsp; | &nbsp;
-        <Link to="/services">Services</Link>
+        <Link to="/laws">Browse Laws</Link>
         &nbsp; | &nbsp;
-        <Link to="/appointment">Request Appointment</Link>
-        &nbsp; | &nbsp;
-        {user.isAdmin 
-        ?
-        <Link to="/appointment/history">Manage Appointments</Link>
-        :
-        <Link to="/appointment/history">Appointment History</Link>
-        }
+        <Link to="/laws/add">Add Law</Link>
         &nbsp; | &nbsp;
         <Link to="/">Welcome, {user.name}</Link>
         &nbsp; | &nbsp;
@@ -34,9 +27,9 @@ export default function Nav({user, updateUser}) {
       <div>
         <Link to="/">Home</Link>
         &nbsp; | &nbsp;
-        <Link to="/services">Services</Link>
+        <Link to="/laws">Browse Laws</Link>
         &nbsp; | &nbsp;
-        <Link to="/auth">Request Appointment</Link>
+        <Link to="/auth">Add Law</Link>
         &nbsp; | &nbsp;
         <Link to="/auth">Login</Link>
       </div>

@@ -41,7 +41,7 @@ export default function Login({setUser, user}) {
   return (
     <div>
       <h1 className="text-center my-6">Login</h1>
-      <form onSubmit={handleSubmit}className="flex flex-col justify-center items-center border-solid border-2 rounded-lg p-3 bg-gradient-to-t from-pink to-mint">
+      <form onSubmit={handleSubmit}className="flex flex-col justify-center items-center border-solid border-2 rounded-lg p-3">
         <div className="m-2">
           <label>
           Email:

@@ -43,7 +43,7 @@ export default function RegisterAcct({setUser, user}) {
   return (
     <div>
       <h1 className="my-6 text-center">Register an Account</h1>
-      <form onSubmit={handleSubmit} className="flex flex-col justify-center items-center border-solid border-2 rounded-lg p-3 bg-gradient-to-t from-pink to-mint">
+      <form onSubmit={handleSubmit} className="flex flex-col justify-center items-center border-solid border-2 rounded-lg p-3">
         <div className="m-2">
           <label className='mr-10'>
           Name:
