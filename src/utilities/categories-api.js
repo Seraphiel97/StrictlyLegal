@@ -2,6 +2,6 @@ import sendRequest from "./send-request";
 
 const BASE_URL = '/api/categories';
 
-export function getAll() {
-    return sendRequest(`${BASE_URL}/getAll`)
+export function getAllCategories() {
+    return sendRequest(`${BASE_URL}/getAllCategories`)
 }

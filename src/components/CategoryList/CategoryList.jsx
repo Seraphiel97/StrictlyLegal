@@ -8,11 +8,11 @@ export default function CategoryList() {
     const [categories, setCategories] = useState([])
 
     useEffect(function() {
-        getAll();
+        getAllCategories();
       }, [])
 
-    async function getAll() {
-        const categoryList = await categoriesAPI.getAll()
+    async function getAllCategories() {
+        const categoryList = await categoriesAPI.getAllCategories()
         setCategories(categoryList)
     }
 

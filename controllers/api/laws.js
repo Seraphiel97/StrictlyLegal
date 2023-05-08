@@ -5,6 +5,7 @@ module.exports = {
 }
 
 async function createLaw(req, res) {
+    console.log(req.body)
     try {
         const law = await Law.create(req.body);
         await law.save();

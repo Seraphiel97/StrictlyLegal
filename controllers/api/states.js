@@ -1,10 +1,10 @@
 const State = require('../../models/state')
 
 module.exports = {
-    getAll,
+    getAllStates,
 }
 
-async function getAll(req, res) {
+async function getAllStates(req, res) {
     try {
         const states = await State.find({})
         res.json(states)

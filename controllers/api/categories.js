@@ -1,10 +1,10 @@
 const Category = require('../../models/category')
 
 module.exports = {
-    getAll,
+    getAllCategories,
 }
 
-async function getAll(req, res) {
+async function getAllCategories(req, res) {
     try {
         const categories = await Category.find({})
         res.json(categories)

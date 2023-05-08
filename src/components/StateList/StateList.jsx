@@ -8,11 +8,11 @@ export default function StateList() {
     const [states, setStates] = useState([])
 
     useEffect(function() {
-        getAll();
+        getAllStates();
       }, [])
 
-    async function getAll() {
-        const stateList = await statesAPI.getAll()
+    async function getAllStates() {
+        const stateList = await statesAPI.getAllStates()
         setStates(stateList)
     }
 

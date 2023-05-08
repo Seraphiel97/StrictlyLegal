@@ -27,7 +27,7 @@ export default function AddLaw({user}) {
     
     try {
 
-      const law = await lawsAPI.createAppointment({...lawData, user: user._id})
+      const law = await lawsAPI.createLaw({...lawData, user: user._id})
       setLawData({
         category: '',
         state: '',
@@ -36,6 +36,7 @@ export default function AddLaw({user}) {
         penalty: '',
         reference: '',
       })
+      console.log(law)
       navigate('/laws')
 
     } catch {

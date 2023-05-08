@@ -3,6 +3,6 @@ const router = express.Router();
 const categoriesCtrl = require('../../controllers/api/categories');
 const ensureLoggedIn = require('../../config/ensureLoggedIn');
 
-router.get('/getAll', ensureLoggedIn, categoriesCtrl.getAll)
+router.get('/getAllCategories', ensureLoggedIn, categoriesCtrl.getAllCategories)
 
 module.exports = router
