@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import * as lawsAPI from '../../utilities/laws-api'
+import StateList from '../../components/StateList/StateList'
 
 export default function AddLaw({user}) {
   const navigate = useNavigate();
@@ -24,6 +25,7 @@ export default function AddLaw({user}) {
     evt.preventDefault();
     
     try {
+
       const law = await lawsAPI.createAppointment({...lawData, user: user._id})
       setLawData({
         category: '',
@@ -33,9 +35,12 @@ export default function AddLaw({user}) {
         penalty: '',
         reference: '',
       })
-      
+      navigate('/laws')
+
     } catch {
+
       setErr('Apologies, something is not working properly. Please check all information fields and try again.')
+
     }
   }
   
@@ -53,7 +58,7 @@ export default function AddLaw({user}) {
           <div>
             <label>State/Territory:</label>
             <select name='state' value={lawData.state} onChange={handleChange} required>
-              <option></option>
+              <StateList />
             </select>
           </div>
           <div>
@@ -70,11 +75,12 @@ export default function AddLaw({user}) {
           </div>
           <div>
             <label>Reference for Verification:</label>
-            <inpue name='reference' value={lawData.reference} onChange={handleChange} required />
+            <input name='reference' value={lawData.reference} onChange={handleChange} required />
           </div>
           <button type='submit'>Submit</button>
         </div>
       </form>
+      <p>{err}</p>
     </div>
   )
 }
