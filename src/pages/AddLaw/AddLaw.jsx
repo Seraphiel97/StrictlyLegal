@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import * as lawsAPI from '../../utilities/laws-api'
 import StateList from '../../components/StateList/StateList'
+import CategoryList from '../../components/CategoryList/CategoryList'
 
 export default function AddLaw({user}) {
   const navigate = useNavigate();
@@ -52,7 +53,7 @@ export default function AddLaw({user}) {
           <div>
             <label>Category:</label>
             <select name='category' value={lawData.category} onChange={handleChange} required>
-              <option></option>
+              <CategoryList />
             </select>
           </div>
           <div>

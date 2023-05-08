@@ -39,3 +39,5 @@ const lawSchema = new Schema({
         default: false,
     }
 })
+
+module.exports = mongoose.model('Law', lawSchema)

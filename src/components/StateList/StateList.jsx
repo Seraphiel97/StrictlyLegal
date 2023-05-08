@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import * as statesAPI from '../../utilities/states-api'
+import StateOption from '../StateOption/StateOption'
 
 export default function StateList() {
 

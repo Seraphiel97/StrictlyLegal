@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import * as categoriesAPI from '../../utilities/categories-api'
+import CategoryOption from '../CategoryOption/CategoryOption'
 
 export default function CategoryList() {
   

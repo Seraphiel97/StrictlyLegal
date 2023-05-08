@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function CategoryOption() {
+export default function CategoryOption({category}) {
   return (
-    <option name='category' value={lawData.category}>
-        CategoryOption
+    <option name='category' value={category._id}>
+        {category.name}
     </option>
   )
 }
