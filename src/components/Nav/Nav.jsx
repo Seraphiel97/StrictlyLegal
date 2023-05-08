@@ -2,11 +2,11 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import * as usersService from '../../utilities/users-service';
 
-export default function Nav({user, updateUser}) {
+export default function Nav({user, setUser}) {
 
   function handleLogout() {
     usersService.logOut();
-    updateUser(null);
+    setUser(null);
   }
   
   return (
