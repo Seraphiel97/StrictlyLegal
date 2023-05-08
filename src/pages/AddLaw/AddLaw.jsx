@@ -1,8 +1,10 @@
-import React from 'react'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import * as lawsAPI from '../../utilities/laws-api'
 
-export default function AddLaw() {
-  
+export default function AddLaw({user}) {
+  const navigate = useNavigate();
+
   const [lawData, setLawData] = useState({
     category: '',
     state: '',
@@ -20,7 +22,17 @@ export default function AddLaw() {
 
   async function handleSubmit(evt){
     evt.preventDefault();
+    
     try {
+      const law = await lawsAPI.createAppointment({...lawData, user: user._id})
+      setLawData({
+        category: '',
+        state: '',
+        question: '',
+        answer: '',
+        penalty: '',
+        reference: '',
+      })
       
     } catch {
       setErr('Apologies, something is not working properly. Please check all information fields and try again.')
@@ -60,6 +72,7 @@ export default function AddLaw() {
             <label>Reference for Verification:</label>
             <inpue name='reference' value={lawData.reference} onChange={handleChange} required />
           </div>
+          <button type='submit'>Submit</button>
         </div>
       </form>
     </div>
