@@ -1,5 +1,4 @@
-const Appointment = require('../../models/appointment')
-const User = require('../../models/user')
+const Law = require('../../models/law')
 
 module.exports = {
     createLaw,
@@ -7,7 +6,7 @@ module.exports = {
 
 async function createLaw(req, res) {
     try {
-        const law = await LawDetail.create(req.body);
+        const law = await Law.create(req.body);
         await law.save();
         res.json(law)
     } catch(err) {
