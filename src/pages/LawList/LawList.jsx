@@ -27,8 +27,14 @@ export default function LawList() {
   
   return (
     <div>
-        {list}
-        <h2>{err}</h2>
+      { allLaws.length ?
+        <div>
+          {list}
+          <h2>{err}</h2>
+        </div>
+        :
+        <h1>No Laws Submitted Yet</h1>
+      } 
     </div>
   )
 }
