@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import LawDisplay from '../../components/LawDisplay/LawDisplay';
 import * as lawsAPI from '../../utilities/laws-api'
 
-export default function LawList() {
+export default function LawList({user}) {
   
   const [allLaws, setAllLaws] = useState([])
 
@@ -22,7 +22,7 @@ export default function LawList() {
   }
 
   const list = allLaws.map((law, index) => (
-    <LawDisplay law={law} key={index}/>
+    <LawDisplay law={law} key={index} user={user}/>
   ))
   
   return (

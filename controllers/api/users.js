@@ -10,8 +10,7 @@ module.exports = {
 
 async function create(req, res){
   try {
-    const correctKey = 'C&CMagic2023'
-    if (req.body.adminKey === correctKey) {
+    if (req.body.adminKey === process.env.ADMIN_KEY) {
       req.body.isAdmin = true
       const user = await User.create(req.body)
       const token = createJWT(user)

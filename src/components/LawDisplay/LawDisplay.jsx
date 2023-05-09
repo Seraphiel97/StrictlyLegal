@@ -2,7 +2,7 @@ import React from 'react'
 import * as lawsAPI from '../../utilities/laws-api'
 import { Link } from 'react-router-dom'
 
-export default function LawDisplay({law}) {
+export default function LawDisplay({law, user}) {
 
   async function handleDelete(law) {
     try {
@@ -21,10 +21,14 @@ export default function LawDisplay({law}) {
         <p>{law.answer}</p>
         <p>{law.penalty}</p>
         <p><a href={law.reference}>Further Information</a></p>
+        {user.isAdmin || user._id === law.user ?
         <div>
           <Link to={'/laws/' + law._id} state={law}>Update</Link>
           <button onClick={() => handleDelete(law)}>Delete</button>
         </div>
+        :
+        <p></p>
+        }
         <hr />
     </div>
   )
