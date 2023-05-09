@@ -5,13 +5,16 @@ module.exports = {
     ],
     theme: {
       colors: {
-        'charcoal': '#5f6366',
-        'mint': '#99ced3',
-        'pink': '#edb5bf',
-        'blue': '#4d6d9a',
-        'gray': '#86b3d1',
-        'white': '#ffffff',
+        'charcoal': '#333140',
+        'blue': '#1BA0F2',
+        'lightGreen': '#0ABF7D',
+        'darkGreen': '#46A683',
+        'white': '#EBEFF2',
         'black': '#000000',
+      },
+      fontFamily: {
+        header: ["Castoro Titling", "cursive"],
+        text: ["Arsenal", "sans-serif"]
       },
       extend: {},
     },

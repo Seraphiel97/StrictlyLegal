@@ -10,7 +10,7 @@ export default function Nav({user, setUser}) {
   }
   
   return (
-    <nav className="bg-charcoal text-white h-10 text-sm sm:flex justify-center items-center">
+    <nav className="bg-black text-white h-10 text-sm font-header sm:flex justify-center items-center">
       { user ?
       <div className="">
         <Link to="/">Home</Link>
