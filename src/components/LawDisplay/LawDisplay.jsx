@@ -1,10 +1,8 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
 import * as lawsAPI from '../../utilities/laws-api'
+import { Link } from 'react-router-dom'
 
-export default function LawDetail({law}) {
-  const navigate = useNavigate()
-
+export default function LawDisplay({law}) {
 
   async function handleDelete(law) {
     try {
@@ -24,9 +22,10 @@ export default function LawDetail({law}) {
         <p>{law.penalty}</p>
         <p><a href={law.reference}>Further Information</a></p>
         <div>
-          <button>Update</button>
+          <Link to={'/laws/' + law._id} state={law}>Update</Link>
           <button onClick={() => handleDelete(law)}>Delete</button>
         </div>
+        <hr />
     </div>
   )
 }

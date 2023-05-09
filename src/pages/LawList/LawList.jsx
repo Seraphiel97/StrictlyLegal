@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import LawDetail from '../../components/LawDetail/LawDetail';
+import LawDisplay from '../../components/LawDisplay/LawDisplay';
 import * as lawsAPI from '../../utilities/laws-api'
 
 export default function LawList() {
@@ -22,7 +22,7 @@ export default function LawList() {
   }
 
   const list = allLaws.map((law, index) => (
-    <LawDetail law={law} key={index}/>
+    <LawDisplay law={law} key={index}/>
   ))
   
   return (

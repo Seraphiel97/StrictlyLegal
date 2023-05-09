@@ -6,6 +6,7 @@ import Auth from '../Auth/Auth';
 import HomePage from '../../components/HomePage/HomePage';
 import LawList from '../LawList/LawList';
 import AddLaw from '../AddLaw/AddLaw';
+import LawUpdate from '../../components/LawUpdate/LawUpdate'
 
 
 export default function App() {
@@ -20,6 +21,7 @@ export default function App() {
             <Route path="/auth" element={<Auth setUser={setUser} user={user} />} />
             <Route path="/laws" element={<LawList user={user} />} />
             <Route path="/laws/add" element={<AddLaw user={user} />} />
+            <Route path="/laws/:id" element={<LawUpdate user={user} />} />
             {/* redirect to /orders/new if path in address bar hasn't matched a <Route> above */}
             <Route path="/*" element={<Navigate to="/laws" />} />
           </Routes>

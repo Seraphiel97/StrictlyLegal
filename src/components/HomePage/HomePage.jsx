@@ -29,6 +29,7 @@ export default function HomePage() {
             <CategoryList />
           </select>
         </div>
+        <button>Submit</button>
       </form>
     </div>
   )

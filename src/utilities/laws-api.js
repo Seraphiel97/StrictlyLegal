@@ -13,3 +13,7 @@ export function getAllLaws() {
 export function deleteLaw(law) {
     return sendRequest(`${BASE_URL}/deleteLaw`, 'DELETE')
 }
+
+export function getLaw() {
+    return sendRequest(`${BASE_URL}/getLaw`)
+}
