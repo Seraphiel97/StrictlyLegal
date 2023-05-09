@@ -29,6 +29,11 @@ export default function LawDisplay({law, user}) {
         :
         <p></p>
         }
+        {law.verification ?
+        <p>Verified</p>
+        :
+        <p>Awaiting Verification</p>
+        }
         <hr />
     </div>
   )

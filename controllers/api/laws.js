@@ -42,9 +42,10 @@ async function updateLaw(req, res) {
             answer: req.body.update.answer,
             penalty: req.body.update.penalty,
             reference: req.body.update.reference,
+            verification: req.body.update.verification,
         })
         res.json(law)
     } catch (err){
-
+        res.status(err).json(err)
     }
 }
