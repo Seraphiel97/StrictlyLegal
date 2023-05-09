@@ -14,6 +14,6 @@ export function deleteLaw(law) {
     return sendRequest(`${BASE_URL}/deleteLaw`, 'DELETE')
 }
 
-export function getLaw() {
-    return sendRequest(`${BASE_URL}/getLaw`)
+export function updateLaw(update, id) {
+    return sendRequest(`${BASE_URL}/updateLaw`, 'PUT', {update, id})
 }

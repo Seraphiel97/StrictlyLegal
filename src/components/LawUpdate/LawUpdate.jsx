@@ -1,18 +1,23 @@
 import {useState, useEffect} from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import * as lawsAPI from '../../utilities/laws-api'
 
 export default function LawUpdate() {
   const navigate = useNavigate();
   const location = useLocation();
-  const state = location.state
+  const state = location.state;
+  const id = useParams();
   
   const [update, setUpdate] = useState({
     question: '',
     answer: '',
     penalty: '',
     reference: '',
-  })
+  });
+
+  const [err, setErr] = useState('')
   
   useEffect(function() {
     setUpdate({
@@ -21,7 +26,7 @@ export default function LawUpdate() {
       penalty: state.penalty,
       reference: state.reference,
     });
-  }, [])
+  }, []);
 
   function handleChange(evt) {
     setUpdate({...update, [evt.target.name]: evt.target.value});
@@ -30,9 +35,11 @@ export default function LawUpdate() {
   async function handleSubmit(evt) {
     evt.preventDefault()
     try {
+      const law = await lawsAPI.updateLaw({...update, id: id})
+      console.log(law)
       navigate('/laws')
     } catch {
-
+      setErr('Apologies, something has gone wrong. Please check the information fields and try again.')
     }
   }
 
@@ -58,6 +65,7 @@ export default function LawUpdate() {
         </div>
         <button type='submit'>Confirm Update</button>
       </form>
+      <p>{err}</p>
     </div>
   )
 }

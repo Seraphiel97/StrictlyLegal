@@ -4,6 +4,7 @@ module.exports = {
     createLaw,
     getAllLaws,
     deleteLaw,
+    updateLaw,
 }
 
 async function createLaw(req, res) {
@@ -30,5 +31,20 @@ async function deleteLaw(req, res) {
         await Law.deleteOne({id: req.body._id}) 
     } catch (err) {
         res.status(err).json(err)
+    }
+}
+
+async function updateLaw(req, res) {
+    try {
+        const id = req.body.update.id.id
+        const law = await Law.findByIdAndUpdate(id, {
+            question: req.body.update.question,
+            answer: req.body.update.answer,
+            penalty: req.body.update.penalty,
+            reference: req.body.update.reference,
+        })
+        res.json(law)
+    } catch (err){
+
     }
 }
