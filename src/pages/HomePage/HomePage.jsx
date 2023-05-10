@@ -27,6 +27,7 @@ export default function HomePage({user}) {
         location: '',
         category: '',
       })
+      setErr('')
     } catch {
       setErr('Apologies, something is not working properly. Please check all information fields and try again.')
     }
@@ -55,11 +56,8 @@ export default function HomePage({user}) {
         </div>
         <button className='mb-4 w-20 h-15 text-lightGreen rounded-lg bg-charcoal hover:bg-white'>Submit</button>
       </form>
-      {err != '' ?
       <h2 className='font-text text-xl mt-4'>{err}</h2>
-      :
       <h2 className='font-header text-xl mt-4'>{response}</h2>
-      }
     </div>
   )
 }

@@ -58,13 +58,13 @@ async function updateLaw(req, res) {
 async function getResponse(req, res) {
     console.log(req.body)
     try {
-        const category = await Category.find({id: req.body.fields.category})
-        const state = await State.find({id: req.body.fields.state})
+        const category = await Category.findOne({id: req.body.fields.category})
+        const state = await State.findOne({id: req.body.fields.state})
         const query = req.body.fields.query
-
+        console.log(category)
         const response = await openai.createCompletion({
             model: 'text-davinci-003',
-            prompt: `In ${state.name} and regarding ${category.name} law, ${query}?`,
+            prompt: `Write a story about a boy who likes pasta`,
             temperature: 0,
             max_tokens: 100,
             top_p: 1,
@@ -73,22 +73,12 @@ async function getResponse(req, res) {
             stop: ["\n"],
         })
 
-        const newLaw = new Law({
-            user: req.body.fields.user,
-            category: req.body.fields.category,
-            state: req.body.fields.state,
-            question: query,
-            answer: response,
-            penalty: '',
-            reference: '',
-            verification: false,
-        })
+        const text = response.data.choices[0].text
+        console.log(text)
+        // res.json(text)
 
-        newLaw.save()
-
-        res.json(response)
-
-    } catch (err) {
-        res.status(500).json(err)
+    } catch (error) {
+        console.error(error);
+        res.status(400).json({ message: error.message, stack: error.stack });
     }
 }
