@@ -48,38 +48,38 @@ export default function AddLaw({user}) {
   
   return (
     <div>
-      <form autoComplete="off" onSubmit={handleSubmit}>
-        <h1>Enter Law</h1>
-        <div>
-          <div>
+      <form className='text-center' autoComplete="off" onSubmit={handleSubmit}>
+        <h1 className='font-header text-4xl mt-4'>Enter Law</h1>
+        <div className='flex flex-col justify-center items-center font-text text-xl colorful'>
+          <div className='my-2 pt-4'>
             <label>Category:</label>
-            <select name='category' value={lawData.category} onChange={handleChange} required>
+            <select className='text-lightGreen' name='category' value={lawData.category} onChange={handleChange} required>
               <CategoryList />
             </select>
           </div>
-          <div>
+          <div className='my-2'>
             <label>State/Territory:</label>
-            <select name='state' value={lawData.state} onChange={handleChange} required>
+            <select className='text-lightGreen' name='state' value={lawData.state} onChange={handleChange} required>
               <StateList />
             </select>
           </div>
-          <div>
+          <div className='my-2'>
             <label>Question:</label>
-            <input name='question' value={lawData.question} onChange={handleChange} maxLength={150} required />
+            <input className='text-lightGreen' name='question' value={lawData.question} onChange={handleChange} maxLength={150} required />
           </div>
-          <div>
+          <div className='my-2'>
             <label>Answer:</label>
-            <input name='answer' value={lawData.answer} onChange={handleChange} maxLength={150} required />
+            <input className='text-lightGreen' name='answer' value={lawData.answer} onChange={handleChange} maxLength={150} required />
           </div>
-          <div>
+          <div className='my-2'>
             <label>Penalty:</label>
-            <input name='penalty' value={lawData.penalty} onChange={handleChange} maxLength={150} />
+            <input className='text-lightGreen' name='penalty' value={lawData.penalty} onChange={handleChange} maxLength={150} />
           </div>
-          <div>
+          <div className='my-2'>
             <label>Reference for Verification:</label>
-            <input name='reference' value={lawData.reference} onChange={handleChange} required />
+            <input className='text-lightGreen' name='reference' value={lawData.reference} onChange={handleChange} required />
           </div>
-          <button type='submit'>Submit</button>
+          <button className='my-4 w-20 h-15 text-lightGreen rounded-lg bg-charcoal hover:bg-white'type='submit'>Submit</button>
         </div>
       </form>
       <p>{err}</p>

@@ -1,7 +1,5 @@
 const Law = require('../../models/law')
-const Category = require('../../models/category')
 const State = require('../../models/state')
-const User = require('../../models/user')
 const openai = require('../../config/gpt')
 
 module.exports = {
@@ -58,24 +56,21 @@ async function updateLaw(req, res) {
 async function getResponse(req, res) {
     console.log(req.body)
     try {
-        const category = await Category.findOne({id: req.body.fields.category})
         const state = await State.findOne({id: req.body.fields.state})
         const query = req.body.fields.query
-        console.log(category)
+        
         const response = await openai.createCompletion({
             model: 'text-davinci-003',
-            prompt: `Write a story about a boy who likes pasta`,
+            prompt: `In ${state.name} and only using government sources, ${query}:`,
             temperature: 0,
             max_tokens: 100,
             top_p: 1,
             frequency_penalty: 0,
             presence_penalty: 0,
-            stop: ["\n"],
         })
 
         const text = response.data.choices[0].text
-        console.log(text)
-        // res.json(text)
+        res.json(text)
 
     } catch (error) {
         console.error(error);

@@ -8,7 +8,6 @@ export default function HomePage({user}) {
   const [fields, setFields] = useState({
     query: '',
     location: '',
-    category: '',
   })
   const [response, setResponse] = useState('')
   const [err, setErr] = useState('')
@@ -25,7 +24,6 @@ export default function HomePage({user}) {
       setFields({
         query: '',
         location: '',
-        category: '',
       })
       setErr('')
     } catch {
@@ -42,16 +40,10 @@ export default function HomePage({user}) {
           <label className='mr-3'>Query:</label>
           <input className='text-lightGreen' name='query' value={fields.query} onChange={handleChange} required/>
         </div>
-        <div className=''>
+        <div className='mb-4'>
           <label className='mr-6'>Location:</label>
-          <select className='text-lightGreen' name='location' value={fields.location} onChange={handleChange} default='64594560ad021b1df26fc5f3' required>
+          <select className='text-lightGreen' name='location' value={fields.location} onChange={handleChange} required>
             <StateList />
-          </select>
-        </div>
-        <div className='my-4'>
-          <label className='mr-1'>Category:</label>
-          <select className='text-lightGreen' name='category' value={fields.category} onChange={handleChange} default='64594561ad021b1df26fc662' required>
-            <CategoryList />
           </select>
         </div>
         <button className='mb-4 w-20 h-15 text-lightGreen rounded-lg bg-charcoal hover:bg-white'>Submit</button>
