@@ -18,7 +18,7 @@ export default function App() {
           <Nav user={user} setUser={setUser}/>
           <Routes>
             {/* client-side route that renders the component instance if the path matches the url in the address bar */}
-            <Route path="/" element={<HomePage />} />
+            <Route path="/" element={<HomePage user={user}/>} />
             <Route path="/auth" element={<Auth setUser={setUser} user={user} />} />
             <Route path="/laws" element={<LawList user={user} />} />
             <Route path="/laws/add" element={<AddLaw user={user} />} />

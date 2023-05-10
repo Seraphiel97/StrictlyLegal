@@ -17,3 +17,7 @@ export function deleteLaw(law) {
 export function updateLaw(update, id) {
     return sendRequest(`${BASE_URL}/updateLaw`, 'PUT', {update, id})
 }
+
+export function getResponse(fields) {
+    return sendRequest(`${BASE_URL}/getResponse`, 'POST', {fields})
+}

@@ -3,7 +3,7 @@ import StateList from '../../components/StateList/StateList'
 import CategoryList from '../../components/CategoryList/CategoryList'
 import * as lawsAPI from '../../utilities/laws-api'
 
-export default function HomePage() {
+export default function HomePage({user}) {
   
   const [fields, setFields] = useState({
     query: '',
@@ -20,7 +20,7 @@ export default function HomePage() {
   async function handleSubmit(evt) {
     evt.preventDefault()
     try {
-      const responseAI = await lawsAPI.getResponse(fields)
+      const responseAI = await lawsAPI.getResponse({...fields, user: user._id})
       setResponse(responseAI)
       setFields({
         query: '',
