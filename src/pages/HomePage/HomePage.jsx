@@ -15,17 +15,17 @@ export default function HomePage() {
       <form onSubmit={handleSubmit} autoComplete='off' className="font-text text-xl flex flex-col flex-auto items-center justify-center colorful">
         <div className='my-4'>
           <label className='mr-3'>Query:</label>
-          <input />
+          <input className='text-lightGreen'/>
         </div>
         <div className=''>
           <label className='mr-6'>Location:</label>
-          <select>
+          <select className='text-lightGreen'>
             <StateList />
           </select>
         </div>
         <div className='my-4'>
           <label className='mr-1'>Category:</label>
-          <select className=''>
+          <select className='text-lightGreen'>
             <CategoryList />
           </select>
         </div>
