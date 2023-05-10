@@ -8,8 +8,9 @@ import LawList from '../LawList/LawList';
 import AddLaw from '../AddLaw/AddLaw';
 import LawUpdate from '../../components/LawUpdate/LawUpdate'
 
-
 export default function App() {
+  
+  
   const [user, setUser] = useState(getUser());
 
   return (
