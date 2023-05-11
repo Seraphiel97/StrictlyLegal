@@ -28,12 +28,15 @@ export default function LawList({user}) {
   return (
     <div>
       { allLaws.length ?
-        <div>
-          {list}
-          <h2>{err}</h2>
+        <div >
+          <h1 className='font-header text-4xl my-4'>Laws</h1>
+          <div className='mb-4 md:grid grid-cols-4 gap-2'>
+            {list}
+          </div>
+          <h2 className='font-text text-2xl'>{err}</h2>
         </div>
         :
-        <h1>No Laws Submitted Yet</h1>
+        <h1 className='font-header text-4xl my-4'>No Laws Submitted Yet</h1>
       } 
     </div>
   )

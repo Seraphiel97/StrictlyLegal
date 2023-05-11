@@ -77,7 +77,7 @@ export default function AddLaw({user}) {
           </div>
           <div className='my-2'>
             <label>Reference for Verification:</label>
-            <input className='text-lightGreen ml-2 w-40' name='reference' value={lawData.reference} onChange={handleChange} required />
+            <input className='text-lightGreen ml-2 w-40' name='reference' value={lawData.reference} onChange={handleChange} />
           </div>
           <button className='my-4 w-20 h-15 text-lightGreen rounded-lg bg-charcoal hover:bg-white'type='submit'>Submit</button>
         </div>
