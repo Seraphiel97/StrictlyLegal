@@ -56,7 +56,7 @@ async function updateLaw(req, res) {
 async function getResponse(req, res) {
     console.log(req.body)
     try {
-        const state = await State.findOne({id: req.body.fields.state})
+        const state = await State.findOne({_id: req.body.fields.location})
         const query = req.body.fields.query
         
         const response = await openai.createCompletion({
