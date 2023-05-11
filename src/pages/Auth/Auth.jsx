@@ -6,7 +6,7 @@ export default function Auth({setUser, user}) {
   const [showLogin, setShowLogin] = useState(true)
   
   return (
-    <main className="flex flex-col justify-center items-center">
+    <main className="font-text text-2xl flex flex-col justify-center items-center">
       {showLogin 
       ?
       <Login setUser={setUser} user={user}/>

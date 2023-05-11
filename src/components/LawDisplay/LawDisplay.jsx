@@ -32,23 +32,22 @@ export default function LawDisplay({law, user}) {
           <p></p>
           }
           {law.verification ?
-          <p>Verified</p>
+          <p className='font-text text-lg'>Verified</p>
           :
-          <p>Awaiting Verification</p>
+          <p className='font-text text-lg'>Awaiting Verification</p>
           }
         </div>
         :
-        <div>
-          <h3 className=''>{law.category.name}</h3>
-          <h3 className=''>{law.state.name}</h3>
-          <h5 className=''>{law.question}</h5>
-          <p className=''>{law.answer}</p>
-          <p className=''>{law.penalty}</p>
-          <p className=''><a href={law.reference}>Further Information</a></p>
+        <div className={` ${law.verification ? `colorful` : ``} mb-2 md:border-solid border-2 rounded-md p-2 `}>
+          <h3 className='font-header text-2xl'>{law.category.name} Law in {law.state.name}</h3>
+          <h5 className='font-text text-xl'>Q: {law.question}</h5>
+          <p className='font-text text-xl'>A: {law.answer}</p>
+          <p className='font-text text-lg'>{law.penalty}</p>
+          <p className='font-text text-lg'>Click <a href={law.reference}>HERE</a> For Further Information</p>
           {law.verification ?
-            <p className=''>Verified</p>
+            <p className='font-text text-lg'>Verified</p>
           :
-            <p className=''>Awaiting Verification</p>
+            <p className='font-text text-lg'>Awaiting Verification</p>
           }
         </div>
         } 

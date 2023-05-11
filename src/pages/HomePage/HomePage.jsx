@@ -1,5 +1,4 @@
 import {useState, useEffect} from 'react'
-import StateList from '../../components/StateList/StateList'
 import LawOption from '../../components/LawOption/LawOption'
 import * as lawsAPI from '../../utilities/laws-api'
 
@@ -68,11 +67,11 @@ export default function HomePage({user}) {
           <button className='mb-4 w-20 h-15 text-lightGreen rounded-xl bg-charcoal hover:bg-white'>Submit</button>
         </form>
         <div className='border-solid border-2 rounded-xl text-center'>
-          <h2 className='text-xl'>Response:</h2>
+          <h2 className='font-header text-2xl'>Response:</h2>
           {response === '' ?
-          <h2>Awaiting Query Submission</h2>
+          <h2 className='font-header text-xl'>Awaiting Query Submission</h2>
           :
-          <h2>{response}</h2>
+          <h2 className='font-header text-xl'>{response}</h2>
           }
         </div>
       </div>

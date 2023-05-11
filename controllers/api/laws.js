@@ -56,8 +56,9 @@ async function updateLaw(req, res) {
 async function getResponse(req, res) {
     console.log(req.body)
     try {
-        const state = await State.findOne({_id: req.body.fields.location})
+        const law = await Law.findOne({_id: req.body.fields.law}).populate('state')
         const query = req.body.fields.query
+        console.log(law)
         
         const response = await openai.createCompletion({
             model: 'text-davinci-003',
