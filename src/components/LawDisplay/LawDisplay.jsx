@@ -16,7 +16,7 @@ export default function LawDisplay({law, user}) {
   return (
     <div>
         {user ?
-        <div className={`border-solid border-2 rounded-md p-2 ${law.verification ? `colorful` : ``}`}>
+        <div className={` ${law.verification ? `colorful` : ``} mb-2 md:border-solid border-2 rounded-md p-2 `}>
           <h3 className='font-header text-2xl'>{law.category.name} Law in {law.state.name}</h3>
           <h5 className='font-text text-xl'>Q: {law.question}</h5>
           <p className='font-text text-xl'>A: {law.answer}</p>

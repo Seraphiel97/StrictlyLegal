@@ -30,7 +30,7 @@ export default function LawList({user}) {
       { allLaws.length ?
         <div >
           <h1 className='font-header text-4xl my-4'>Laws</h1>
-          <div className='mb-4 md:grid grid-cols-4 gap-2'>
+          <div className='md:grid grid-cols-4 gap-4'>
             {list}
           </div>
           <h2 className='font-text text-2xl'>{err}</h2>

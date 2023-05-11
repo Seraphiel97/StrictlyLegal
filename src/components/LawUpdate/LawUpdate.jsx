@@ -47,28 +47,28 @@ export default function LawUpdate({user}) {
 
   return (
     <div>
-      <h1>LawUpdate</h1>
-      <form onSubmit={handleSubmit} autoComplete='off'>
-        <div>
+      <h1 className='font-header text-4xl my-4'>Update Law</h1>
+      <form className='flex flex-col justify-center items-center font-text text-xl colorful' onSubmit={handleSubmit} autoComplete='off'>
+        <div className='my-2 pt-2'>
           <label>Question:</label>
-          <input name='question' value={update.question} onChange={handleChange} maxLength={150} required />
+          <input className='text-lightGreen w-60 ml-10' name='question' value={update.question} onChange={handleChange} maxLength={150} required />
         </div>
-        <div>
-          <label>Answer:</label>
-          <input name='answer' value={update.answer} onChange={handleChange} maxLength={150} required />
+        <div className='my-2'>
+          <label className='mr-1'>Answer:</label>
+          <input className='text-lightGreen w-60 ml-12' name='answer' value={update.answer} onChange={handleChange} maxLength={150} required />
         </div>
-        <div>
+        <div className='my-2'>
           <label>Penalty(optional):</label>
-          <input name='penalty' value={update.penalty} onChange={handleChange} maxLength={150} />
+          <input className='text-lightGreen w-52 ml-2' name='penalty' value={update.penalty} onChange={handleChange} maxLength={150} />
         </div>
-        <div>
+        <div className='my-2'>
           <label>Reference:</label>
-          <input name='reference' value={update.reference} onChange={handleChange} required />
+          <input className='text-lightGreen w-60 ml-9' name='reference' value={update.reference} onChange={handleChange} required />
         </div>
         {user.isAdmin ?
-          <div>
+          <div className='my-2'>
             <label>Verified?</label>
-            <select name='verification' value={update.verification} onChange={handleChange}>
+            <select className='text-lightGreen w-60 ml-12' name='verification' value={update.verification} onChange={handleChange}>
               <option value={true}>True</option>
               <option value={false}>False</option>
             </select>
@@ -76,7 +76,7 @@ export default function LawUpdate({user}) {
         :
           <br />
         }
-        <button type='submit'>Confirm Update</button>
+        <button className='my-2 w-30 p-1 h-15 text-lightGreen rounded-xl bg-charcoal hover:bg-white' type='submit'>Confirm Update</button>
       </form>
       <p>{err}</p>
     </div>
