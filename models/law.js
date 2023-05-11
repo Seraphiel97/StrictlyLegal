@@ -24,7 +24,6 @@ const lawSchema = new Schema({
     },
     answer: {
         type: String,
-        maxLength: 150,
         required: true,
     },
     penalty: {
@@ -39,3 +38,5 @@ const lawSchema = new Schema({
         default: false,
     }
 })
+
+module.exports = mongoose.model('Law', lawSchema)

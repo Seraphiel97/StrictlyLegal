@@ -11,3 +11,5 @@ const stateSchema = new Schema({
         required: true,
     }
 })
+
+module.exports = mongoose.model('State', stateSchema)
