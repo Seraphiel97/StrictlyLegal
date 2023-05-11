@@ -53,31 +53,31 @@ export default function AddLaw({user}) {
         <div className='flex flex-col justify-center items-center font-text text-xl colorful'>
           <div className='my-2 pt-4'>
             <label>Category:</label>
-            <select className='text-lightGreen' name='category' value={lawData.category} onChange={handleChange} required>
+            <select className='text-lightGreen ml-2 w-72' name='category' value={lawData.category} onChange={handleChange} required>
               <CategoryList />
             </select>
           </div>
           <div className='my-2'>
             <label>State/Territory:</label>
-            <select className='text-lightGreen' name='state' value={lawData.state} onChange={handleChange} required>
+            <select className='text-lightGreen ml-3 w-60' name='state' value={lawData.state} onChange={handleChange} required>
               <StateList />
             </select>
           </div>
           <div className='my-2'>
             <label>Question:</label>
-            <input className='text-lightGreen' name='question' value={lawData.question} onChange={handleChange} maxLength={150} required />
+            <input className='text-lightGreen ml-2 w-72' name='question' value={lawData.question} onChange={handleChange} maxLength={150} required />
           </div>
           <div className='my-2'>
             <label>Answer:</label>
-            <input className='text-lightGreen' name='answer' value={lawData.answer} onChange={handleChange} maxLength={150} required />
+            <input className='text-lightGreen ml-5 w-72' name='answer' value={lawData.answer} onChange={handleChange} maxLength={150} required />
           </div>
           <div className='my-2'>
-            <label>Penalty:</label>
-            <input className='text-lightGreen' name='penalty' value={lawData.penalty} onChange={handleChange} maxLength={150} />
+            <label className=''>Penalty:</label>
+            <input className='text-lightGreen ml-5 w-72' name='penalty' value={lawData.penalty} onChange={handleChange} maxLength={150} />
           </div>
           <div className='my-2'>
             <label>Reference for Verification:</label>
-            <input className='text-lightGreen' name='reference' value={lawData.reference} onChange={handleChange} required />
+            <input className='text-lightGreen ml-2 w-40' name='reference' value={lawData.reference} onChange={handleChange} required />
           </div>
           <button className='my-4 w-20 h-15 text-lightGreen rounded-lg bg-charcoal hover:bg-white'type='submit'>Submit</button>
         </div>
