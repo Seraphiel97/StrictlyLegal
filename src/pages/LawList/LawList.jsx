@@ -26,7 +26,7 @@ export default function LawList({user}) {
   ))
   
   return (
-    <div>
+    <div className='bg-charcoal'>
       { allLaws.length ?
         <div >
           <h1 className='font-header text-4xl my-4'>Laws</h1>

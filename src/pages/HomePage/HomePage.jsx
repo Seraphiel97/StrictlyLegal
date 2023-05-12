@@ -61,6 +61,7 @@ export default function HomePage({user}) {
           <div className='mb-4'>
             <label>Law:</label>
             <select className='text-lightGreen w-48 ml-7 md:w-96' name='law' value={fields.law} onChange={handleChange} required>
+              <option>--Select an Option--</option>
               {list}
             </select>
           </div>

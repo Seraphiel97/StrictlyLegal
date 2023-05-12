@@ -62,7 +62,7 @@ async function getResponse(req, res) {
         
         const response = await openai.createCompletion({
             model: 'text-davinci-003',
-            prompt: `In ${state.name} and only using government sources, ${query}:`,
+            prompt: `Write a short story synopsis based on the following query: ${query} in ${law.state.name}`,
             temperature: 0,
             max_tokens: 100,
             top_p: 1,
