@@ -58,13 +58,14 @@ async function getResponse(req, res) {
     try {
         const law = await Law.findOne({_id: req.body.fields.law}).populate('state')
         const query = req.body.fields.query
+        const ideology = req.body.fields.ideology
         console.log(law)
         
         const response = await openai.createCompletion({
             model: 'text-davinci-003',
-            prompt: `Write a short story synopsis based on the following query: ${query} in ${law.state.name}`,
-            temperature: 0,
-            max_tokens: 100,
+            prompt: `Write a 75 word maximum US ${ideology} opinion on ${law.question} and ${law.answer} in ${law.state.name} with the following concepts: ${query}`,
+            temperature: 0.5,
+            max_tokens: 200,
             top_p: 1,
             frequency_penalty: 0,
             presence_penalty: 0,

@@ -6,6 +6,7 @@ export default function HomePage({user}) {
   
   const [fields, setFields] = useState({
     query: '',
+    ideology: '',
     law: '',
   })
   const [response, setResponse] = useState('')
@@ -40,6 +41,7 @@ export default function HomePage({user}) {
       setResponse(responseAI)
       setFields({
         query: '',
+        ideology: '',
         law: '',
       })
       setErr('')
@@ -55,12 +57,20 @@ export default function HomePage({user}) {
       <div>
         <form onSubmit={handleSubmit} autoComplete='off' className="font-text text-xl border-solid border-2 rounded-xl colorful mb-4 md:">
           <div className='my-4'>
-            <label className='mr-3'>Query:</label>
-            <input className='text-lightGreen w-48 md:w-96' name='query' value={fields.query} onChange={handleChange} required/>
+            <label className='mr-4'>Keywords:</label>
+            <input className='text-lightGreen w-48 ml-12 md:w-96' name='query' value={fields.query} onChange={handleChange} required/>
+          </div>
+          <div className='my-4'>
+            <label>Political Ideology:</label>
+            <select className='text-lightGreen w-48 ml-2 md:w-96' name='ideology' value={fields.ideology} onChange={handleChange} required>
+              <option>--Select an Option--</option>
+              <option value='conservative'>Conservative</option>
+              <option value='progressive'>Progressive</option>
+            </select>
           </div>
           <div className='mb-4'>
-            <label>Law:</label>
-            <select className='text-lightGreen w-48 ml-7 md:w-96' name='law' value={fields.law} onChange={handleChange} required>
+            <label className='mr-12 pr-3'>Law:</label>
+            <select className='text-lightGreen w-48 ml-12 md:w-96' name='law' value={fields.law} onChange={handleChange} required>
               <option>--Select an Option--</option>
               {list}
             </select>
@@ -70,7 +80,7 @@ export default function HomePage({user}) {
         <div className='border-solid border-2 rounded-xl text-center'>
           <h2 className='font-header text-2xl'>Response:</h2>
           {response === '' ?
-          <h2 className='font-header text-xl'>Awaiting Query Submission</h2>
+          <h2 className='font-header text-xl'>Awaiting Submission</h2>
           :
           <h2 className='font-header text-xl'>{response}</h2>
           }
