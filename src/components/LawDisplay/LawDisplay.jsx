@@ -7,7 +7,7 @@ export default function LawDisplay({law, user}) {
   async function handleDelete(law) {
     try {
       const deletedLaw = await lawsAPI.deleteLaw(law)
-      console.log('Success')
+      console.log(deletedLaw)
     } catch {
       console.log('Failure')
     }

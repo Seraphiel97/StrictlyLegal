@@ -10,7 +10,7 @@ export default function Nav({user, setUser}) {
   }
   
   return (
-    <nav className="bg-black text-white h-10 text-sm font-header sm:flex justify-center items-center">
+    <nav className="bg-black text-white h-10 text-xs font-header sm:text-xl flex justify-center items-center ">
       { user ?
       <div className="">
         <Link to="/">Home</Link>
@@ -18,8 +18,6 @@ export default function Nav({user, setUser}) {
         <Link to="/laws">Browse Laws</Link>
         &nbsp; | &nbsp;
         <Link to="/laws/add">Add Law</Link>
-        &nbsp; | &nbsp;
-        <Link to="/">Welcome, {user.name}</Link>
         &nbsp; | &nbsp;
         <Link to="" onClick={handleLogout}>Logout</Link>
       </div>

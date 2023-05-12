@@ -31,7 +31,8 @@ async function getAllLaws(req, res) {
 
 async function deleteLaw(req, res) {
     try {
-        await Law.deleteOne({id: req.body._id}) 
+        const item = await Law.findOneAndDelete({_id: req.body._id}) 
+        res.json(item)
     } catch (err) {
         res.status(500).json(err)
     }
