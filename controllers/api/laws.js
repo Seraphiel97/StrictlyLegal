@@ -8,6 +8,7 @@ module.exports = {
     deleteLaw,
     updateLaw,
     getResponse,
+    getFilteredLaws,
 }
 
 async function createLaw(req, res) {
@@ -23,6 +24,15 @@ async function createLaw(req, res) {
 async function getAllLaws(req, res) {
     try {
         const laws = await Law.find({}).populate('category').populate('state')
+        res.json(laws)
+    } catch(err) {
+        res.status(err).json(err)
+    }
+}
+
+async function getFilteredLaws(req, res) {
+    try {
+        const laws = await Law.find({verification: true})
         res.json(laws)
     } catch(err) {
         res.status(err).json(err)

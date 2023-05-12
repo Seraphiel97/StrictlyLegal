@@ -21,3 +21,7 @@ export function updateLaw(update, id) {
 export function getResponse(fields) {
     return sendRequest(`${BASE_URL}/getResponse`, 'POST', {fields})
 }
+
+export function getFilteredLaws() {
+    return sendRequest(`${BASE_URL}/getFilteredLaws`)
+}

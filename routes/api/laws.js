@@ -5,6 +5,8 @@ const ensureLoggedIn = require('../../config/ensureLoggedIn');
 
 router.get('/getAllLaws', lawsCtrl.getAllLaws)
 
+router.get('/getFilteredLaws', lawsCtrl.getFilteredLaws)
+
 router.post('/create', ensureLoggedIn, lawsCtrl.createLaw)
 
 router.post('/getResponse', ensureLoggedIn, lawsCtrl.getResponse)

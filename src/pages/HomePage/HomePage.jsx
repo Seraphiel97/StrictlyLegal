@@ -15,12 +15,12 @@ export default function HomePage({user}) {
   const[allLaws, setAllLaws] = useState([])
 
   useEffect(function() {
-    getAllLaws();
+    getFilteredLaws();
   }, [])
 
-  async function getAllLaws() {
+  async function getFilteredLaws() {
     try {
-      const lawList = await lawsAPI.getAllLaws();
+      const lawList = await lawsAPI.getFilteredLaws();
       setAllLaws(lawList)
     } catch {
       setErr('Unfortunately, Strictly Legal is experiencing technical difficulties. Please try again later!')
