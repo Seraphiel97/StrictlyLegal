@@ -72,7 +72,8 @@ async function getResponse(req, res) {
         })
 
         const text = response.data.choices[0].text
-        res.json(text)
+        const finalResponse = text.replace(/[, ]+/g, " ").trim()
+        res.json(finalResponse)
 
     } catch (error) {
         console.error(error);

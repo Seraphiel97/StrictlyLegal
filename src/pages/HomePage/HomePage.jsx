@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react'
 import LawOption from '../../components/LawOption/LawOption'
+import Footer from '../../components/Footer/Footer'
 import * as lawsAPI from '../../utilities/laws-api'
 
 export default function HomePage({user}) {
@@ -39,11 +40,6 @@ export default function HomePage({user}) {
     try {
       const responseAI = await lawsAPI.getResponse({...fields, user: user._id})
       setResponse(responseAI)
-      setFields({
-        query: '',
-        ideology: '',
-        law: '',
-      })
       setErr('')
     } catch {
       setErr('Apologies, something is not working properly. Please check all information fields and try again.')
@@ -82,11 +78,16 @@ export default function HomePage({user}) {
           {response === '' ?
           <h2 className='font-header text-xl'>Awaiting Submission</h2>
           :
-          <h2 className='font-header text-xl'>{response}</h2>
+          <>
+            <h2 className='font-header text-xl'>{response}</h2>
+            <h3 className='font-text text-sm'>For further information about this specific rule, please click <a href=''>HERE</a>.</h3>
+          </>
+          
           }
         </div>
       </div>
       <h2 className='font-text text-xl mt-4'>{err}</h2>
+      <Footer />
     </div>
   )
 }
