@@ -25,3 +25,7 @@ export function getResponse(fields) {
 export function getFilteredLaws() {
     return sendRequest(`${BASE_URL}/getFilteredLaws`)
 }
+
+export function filterLaws(filters) {
+    return sendRequest(`${BASE_URL}/filterLaws`, 'POST', filters)
+}

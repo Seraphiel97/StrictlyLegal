@@ -18,9 +18,9 @@ export default function LawList({user}) {
     getAllLaws();
   }, [])
 
-  async function getAllLaws(filters) {
+  async function getAllLaws() {
     try {
-      const lawList = await lawsAPI.getAllLaws(filters);
+      const lawList = await lawsAPI.getAllLaws();
       setAllLaws(lawList)
     } catch {
       setErr('Unfortunately, Strictly Legal is experiencing technical difficulties. Please try again later!')
@@ -30,7 +30,7 @@ export default function LawList({user}) {
   async function handleSubmit(evt) {
     evt.preventDefault()
     try {
-      const lawList = await lawsAPI.filterLaws();
+      const lawList = await lawsAPI.filterLaws(filters);
       setAllLaws(lawList);
     } catch {
       setErr('Unfortunately, Strictly Legal is experiencing technical difficulties. Please try again later!')
@@ -39,6 +39,10 @@ export default function LawList({user}) {
 
   function handleChange(evt) {
     setFilters({...filters, [evt.target.name]: evt.target.value});
+  }
+
+  function click() {
+    setFilters(!filters.verified)
   }
 
   const list = allLaws.map((law, index) => (
@@ -50,17 +54,17 @@ export default function LawList({user}) {
       <form className='flex font-text text-lg justify-center items-center py-2 colorful' autoComplete='off' onSubmit={handleSubmit}>
         <p className='mr-2 font-bold'>Filters: </p>
         <label className='mr-2'>State - </label>
-        <select className='text-lightGreen mr-2' value={filters.state} onChange={handleChange}>
+        <select className='text-lightGreen mr-2' name='state' value={filters.state} onChange={handleChange}>
           <option>--Select an Option--</option>
           <StateList />
         </select>
         <label className='mr-2'>Category - </label>
-        <select className='text-lightGreen mr-2' value={filters.category} onChange={handleChange}>
+        <select className='text-lightGreen mr-2' name='category' value={filters.category} onChange={handleChange}>
           <option>--Select an Option--</option>
           <CategoryList />
         </select>
         <label className='mr-2'>Verified - </label>
-        <input type='checkbox' className='mr-2' value={filters.verified} onChange={!filters.verified}/>
+        <input type='checkbox' className='mr-2' name='verified' value={filters.verified} onClick={click} />
         <button className='w-20 h-15 text-lightGreen rounded-xl bg-charcoal hover:bg-white' type='submit'>Apply</button>
       </form>
       { allLaws.length ?

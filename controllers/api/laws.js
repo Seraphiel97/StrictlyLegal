@@ -1,5 +1,6 @@
 const Law = require('../../models/law')
 const State = require('../../models/state')
+const Category = require('../../models/category')
 const openai = require('../../config/gpt')
 
 module.exports = {
@@ -9,6 +10,7 @@ module.exports = {
     updateLaw,
     getResponse,
     getFilteredLaws,
+    filterLaws,
 }
 
 async function createLaw(req, res) {
@@ -89,5 +91,15 @@ async function getResponse(req, res) {
     } catch (error) {
         console.error(error);
         res.status(400).json({ message: error.message, stack: error.stack });
+    }
+}
+
+async function filterLaws(req, res) {
+    console.log(req.body)
+    try {
+        console.log(req.body)
+        res.json(req.body)
+    } catch(err) {
+        res.status(500).json(err)
     }
 }

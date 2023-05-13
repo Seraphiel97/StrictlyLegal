@@ -11,6 +11,8 @@ router.post('/create', ensureLoggedIn, lawsCtrl.createLaw)
 
 router.post('/getResponse', ensureLoggedIn, lawsCtrl.getResponse)
 
+router.post('/filterLaws', lawsCtrl.filterLaws)
+
 router.put('/updateLaw', ensureLoggedIn, lawsCtrl.updateLaw)
 
 router.delete('/deleteLaw', ensureLoggedIn, lawsCtrl.deleteLaw)
