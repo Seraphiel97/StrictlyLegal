@@ -2,11 +2,12 @@ import React from 'react'
 import * as lawsAPI from '../../utilities/laws-api'
 import { Link } from 'react-router-dom'
 
-export default function LawDisplay({law, user}) {
+export default function LawDisplay({law, user, getLaws}) {
 
   async function handleDelete(law) {
     try {
       const deletedLaw = await lawsAPI.deleteLaw(law)
+      getLaws()
       console.log(deletedLaw)
     } catch {
       console.log('Failure')

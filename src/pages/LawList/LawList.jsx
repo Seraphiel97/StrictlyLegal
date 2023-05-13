@@ -46,7 +46,7 @@ export default function LawList({user}) {
   }
 
   const list = allLaws.map((law, index) => (
-    <LawDisplay law={law} key={index} user={user}/>
+    <LawDisplay law={law} key={index} user={user} getLaws={getAllLaws}/>
   ))
   
   return (
