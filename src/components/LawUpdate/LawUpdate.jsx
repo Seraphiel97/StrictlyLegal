@@ -63,7 +63,7 @@ export default function LawUpdate({user}) {
         </div>
         <div className='my-2'>
           <label>Reference:</label>
-          <input className='text-lightGreen w-60 ml-9' name='reference' value={update.reference} onChange={handleChange} required />
+          <input className='text-lightGreen w-60 ml-9' name='reference' value={update.reference} onChange={handleChange} />
         </div>
         {user.isAdmin ?
           <div className='my-2'>

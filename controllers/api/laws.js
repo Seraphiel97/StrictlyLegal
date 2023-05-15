@@ -67,12 +67,10 @@ async function updateLaw(req, res) {
 }
 
 async function getResponse(req, res) {
-    console.log(req.body)
     try {
         const law = await Law.findOne({_id: req.body.fields.law}).populate('state')
         const query = req.body.fields.query
         const ideology = req.body.fields.ideology
-        console.log(law)
         
         const response = await openai.createCompletion({
             model: 'text-davinci-003',
@@ -94,8 +92,8 @@ async function getResponse(req, res) {
     }
 }
 
+// Functionality is a work-in-progress
 async function filterLaws(req, res) {
-    console.log(req.body)
     try {
         console.log(req.body)
         res.json(req.body)

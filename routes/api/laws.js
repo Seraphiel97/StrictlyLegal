@@ -9,7 +9,7 @@ router.get('/getFilteredLaws', lawsCtrl.getFilteredLaws)
 
 router.post('/create', ensureLoggedIn, lawsCtrl.createLaw)
 
-router.post('/getResponse', ensureLoggedIn, lawsCtrl.getResponse)
+router.post('/getResponse', lawsCtrl.getResponse)
 
 router.post('/filterLaws', lawsCtrl.filterLaws)
 

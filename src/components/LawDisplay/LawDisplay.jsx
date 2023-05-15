@@ -8,7 +8,6 @@ export default function LawDisplay({law, user, getLaws}) {
     try {
       const deletedLaw = await lawsAPI.deleteLaw(law)
       getLaws()
-      console.log(deletedLaw)
     } catch {
       console.log('Failure')
     }

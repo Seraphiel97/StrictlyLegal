@@ -47,7 +47,7 @@ export default function HomePage({user}) {
   }
   
   return (
-    <div>
+    <div className='bg-charcoal'>
       <h1 className='font-header text-4xl my-4'>Strictly Legal</h1>
       <h2 className='font-header text-2xl'>Mission:</h2>
       <div>
@@ -71,7 +71,7 @@ export default function HomePage({user}) {
               {list}
             </select>
           </div>
-          <button className='mb-4 w-20 h-15 text-lightGreen rounded-xl bg-charcoal hover:bg-white'>Submit</button>
+          <button className='mb-4 w-20 h-15 text-lightGreen rounded-xl bg-charcoal hover:bg-white' type='submit'>Submit</button>
         </form>
         <div className='border-solid border-2 rounded-xl text-center'>
           <h2 className='font-header text-2xl'>Response:</h2>
@@ -80,7 +80,6 @@ export default function HomePage({user}) {
           :
           <>
             <h2 className='font-header text-xl'>{response}</h2>
-            <h3 className='font-text text-sm'>For further information about this specific rule, please click <a href=''>HERE</a>.</h3>
           </>
           
           }
