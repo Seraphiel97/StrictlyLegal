@@ -91,7 +91,7 @@ async function getResponse(req, res) {
 
         // accesses the property relevant to the client from the response object
         const text = response.data.choices[0].text
-        // trims the unnecessary comma and space from the beginning of the response
+        // trims the unnecessary comma and space from the response
         const finalResponse = text.replace(/[, ]+/g, " ").trim()
         res.json(finalResponse)
 

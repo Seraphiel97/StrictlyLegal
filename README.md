@@ -20,6 +20,7 @@
 ![Visual Studio](https://img.shields.io/badge/Visual%20Studio-5C2D91.svg?style=for-the-badge&logo=visual-studio&logoColor=white)
 
 [Powered by OpenAI](https://openai.com/)
+[CSS Effect by Manuel Pinto](codepen.io/P1N2O/pen/pyBNzX)
 ***
 ## Strictly Legal Overview:
 
