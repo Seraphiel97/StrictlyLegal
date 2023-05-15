@@ -102,11 +102,11 @@ async function getResponse(req, res) {
 }
 
 // Functionality is a work-in-progress
-// async function filterLaws(req, res) {
-//     try {
-//         console.log(req.body)
-//         res.json(req.body)
-//     } catch(err) {
-//         res.status(500).json(err)
-//     }
-// }
+async function filterLaws(req, res) {
+    try {
+        console.log(req.body)
+        res.json(req.body)
+    } catch(err) {
+        res.status(500).json(err)
+    }
+}
