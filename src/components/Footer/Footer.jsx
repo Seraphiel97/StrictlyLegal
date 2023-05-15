@@ -3,7 +3,7 @@ import React from 'react'
 export default function Footer() {
   return (
     <div>
-        <h3 className='font-text text-sm bg-black text-white absolute bottom-0'>
+        <h3 className='font-text text-sm bg-black text-white md:absolute bottom-0'>
             Disclaimer: Strictly Legal is a website that provides general information about legal topics. 
             The information on this website is not intended to be legal advice, and it should not be relied upon as such. 
             The content of this site is for educational and informational purposes only. Users of this website should not 
