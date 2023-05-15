@@ -4,6 +4,7 @@ module.exports = {
     getAllCategories,
 }
 
+// used to retrieve all categories for drop-down menus
 async function getAllCategories(req, res) {
     try {
         const categories = await Category.find({})

@@ -26,19 +26,24 @@ export default function LawList({user}) {
       setErr('Unfortunately, Strictly Legal is experiencing technical difficulties. Please try again later!')
     }
   }
-
-  async function handleSubmit(evt) {
-    evt.preventDefault()
-    try {
-      const lawList = await lawsAPI.filterLaws(filters);
-      setAllLaws(lawList);
-    } catch {
-      setErr('Unfortunately, Strictly Legal is experiencing technical difficulties. Please try again later!')
-    }
-  }
+  // Work-in-Progress
+  // async function handleSubmit(evt) {
+  //   evt.preventDefault()
+  //   try {
+  //     const lawList = await lawsAPI.filterLaws(filters);
+  //     setAllLaws(lawList);
+  //   } catch {
+  //     setErr('Unfortunately, Strictly Legal is experiencing technical difficulties. Please try again later!')
+  //   }
+  // }
 
   function handleChange(evt) {
     setFilters({...filters, [evt.target.name]: evt.target.value});
+  }
+
+  function handleAlert(evt) {
+    evt.preventDefault()
+    alert('Apologies, this functionality is a work-in-progress. Check again soon as updates occur frequently.')
   }
 
   function click() {
@@ -51,7 +56,7 @@ export default function LawList({user}) {
   
   return (
     <div className='bg-charcoal'>
-      <form className='flex font-text text-lg justify-center items-center py-2 colorful' autoComplete='off' onSubmit={handleSubmit}>
+      <form className='flex font-text text-lg justify-center items-center py-2 colorful' autoComplete='off' onSubmit={handleAlert}>
         <p className='mr-2 font-bold'>Filters: </p>
         <label className='mr-2'>State - </label>
         <select className='text-lightGreen mr-2' name='state' value={filters.state} onChange={handleChange}>
